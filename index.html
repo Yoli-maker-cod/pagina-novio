@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuestra historia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="corazones" aria-hidden="true"></div>
+
+  <nav class="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Historia</a>
+    <a href="#razones">Razones</a>
+    <a href="#galeria">Galería</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#sorpresa">Sorpresa</a>
+  </nav>
+
+  <!-- 1. Inicio + contador -->
+  <header id="inicio" class="seccion hero">
+    <p class="pre">Para</p>
+    <h1 class="nombres"><span id="nombre-el"></span></h1>
+    <p class="sub">Llevamos juntos…</p>
+    <div class="contador">
+      <div><span id="c-anios">0</span><small id="l-anios">años</small></div>
+      <div><span id="c-meses">0</span><small id="l-meses">meses</small></div>
+      <div><span id="c-dias">0</span><small id="l-dias">días</small></div>
+      <div><span id="c-horas">0</span><small>horas</small></div>
+      <div><span id="c-min">0</span><small>minutos</small></div>
+      <div><span id="c-seg">0</span><small>segundos</small></div>
+    </div>
+    <p class="sub pequeño" id="desde"></p>
+    <p class="sub pequeño" id="total-dias"></p>
+    <button class="boton" id="empezar">Empezar ↓</button>
+  </header>
+
+  <!-- 2. Línea de tiempo -->
+  <section id="historia" class="seccion">
+    <h2>Nuestra historia</h2>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <!-- 3. Razones -->
+  <section id="razones" class="seccion" data-parada>
+    <h2>Razones por las que te quiero</h2>
+    <p class="sub">Toca el sobre 💌</p>
+    <button class="sobre" id="sobre" aria-label="Abrir una razón">💌</button>
+    <p class="razon" id="razon" aria-live="polite"></p>
+    <p class="sub pequeño" id="razon-cuenta"></p>
+    <button class="boton seguir" hidden>Seguir bajando ↓</button>
+  </section>
+
+  <!-- 4. Galería con música -->
+  <section id="galeria" class="seccion">
+    <h2>Nuestros momentos</h2>
+    <div class="galeria" id="grid"></div>
+  </section>
+
+  <!-- 5. Quiz -->
+  <section id="quiz" class="seccion" data-parada>
+    <h2>¿Cuánto me conoces?</h2>
+    <div class="tarjeta" id="quiz-caja"></div>
+    <button class="boton seguir" hidden>Seguir bajando ↓</button>
+  </section>
+
+  <!-- 6. Sorpresa -->
+  <section id="sorpresa" class="seccion">
+    <h2>Una sorpresa</h2>
+    <div class="tarjeta" id="sorpresa-caja"></div>
+  </section>
+
+  <!-- Final -->
+  <section id="final" class="seccion final">
+    <p class="final-pre">Y para terminar…</p>
+    <h2 class="final-titulo">Te amo, <span id="final-nombre"></span></h2>
+    <p class="final-frase" id="final-frase"></p>
+    <p class="final-firma" id="final-firma"></p>
+    <span class="final-corazon" aria-hidden="true">♥</span>
+  </section>
+
+  <footer>Hecho amor 💗</footer>
+
+  <div class="flotantes">
+    <button class="auto-scroll" id="btn-musica" aria-pressed="false">🎵 <span id="nombre-cancion"></span></button>
+    <button class="auto-scroll" id="auto-scroll" aria-pressed="false">▶ Bajar solito</button>
+  </div>
+  <audio id="audio" loop preload="auto"></audio>
+
+  <!-- Visor de fotos -->
+  <div class="visor" id="visor" hidden>
+    <button class="cerrar" id="visor-cerrar" aria-label="Cerrar">✕</button>
+    <button class="flecha izq" id="visor-ant" aria-label="Foto anterior">‹</button>
+    <img id="visor-img" alt="" />
+    <button class="flecha der" id="visor-sig" aria-label="Foto siguiente">›</button>
+    <p id="visor-texto"></p>
+    <p class="visor-cuenta" id="visor-cuenta"></p>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
